@@ -17,13 +17,13 @@ class ProductDetailActivityTest : BaseTest() {
     fun shouldOpenProductDetailsSuccessfully() {
         server.enqueue(
             MockResponse().apply {
-                setBody(DetailContent.Data.detailBody)
+                setBody(DetailContent.Data.productDetailBody)
             }
         )
         productDetailRobot {
             open(DetailContent.params)
             isOnDetailsScreen(
-                DetailContent.product,
+                DetailContent.params,
                 DetailContent.detail
             )
         }
@@ -38,14 +38,14 @@ class ProductDetailActivityTest : BaseTest() {
         )
         server.enqueue(
             MockResponse().apply {
-                setBody(DetailContent.Data.detailBody)
+                setBody(DetailContent.Data.productDetailBody)
             }
         )
         productDetailRobot {
             open(DetailContent.params)
             retry()
             isOnDetailsScreen(
-                DetailContent.product,
+                DetailContent.params,
                 DetailContent.detail
             )
         }

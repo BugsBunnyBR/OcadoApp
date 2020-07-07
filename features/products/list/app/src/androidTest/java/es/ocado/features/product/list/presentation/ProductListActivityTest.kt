@@ -17,7 +17,7 @@ class ProductListActivityTest : BaseTest() {
     fun shouldOpenProductDetails() {
         server.enqueue(
             MockResponse().apply {
-                setBody(ListContent.Data.productsBody)
+                setBody(ListContent.Data.productsListBody)
             }
         )
         server.enqueue(

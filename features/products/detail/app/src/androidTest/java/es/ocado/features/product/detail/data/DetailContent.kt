@@ -3,13 +3,11 @@ package es.ocado.features.product.detail.data
 
 import es.ocado.features.product.detail.domain.model.ProductDetailEntity
 import es.ocado.features.product.detail.domain.model.ProductDetailId
-import es.ocado.features.product.list.domain.model.ProductEntity
-import es.ocado.features.product.list.domain.model.ProductId
 import es.ocado.navigation.features.products.detail.ProductDetailParams
 
 internal object DetailContent {
     object Data {
-        val detailBody: String =
+        val productDetailBody: String =
             /* ktlint-disable max_line_length */
             """ 
                 {
@@ -25,13 +23,6 @@ internal object DetailContent {
 
     val params = ProductDetailParams(
         id = "309396011",
-        price = "1.45",
-        title = "Ocado Organic Fairtrade Bananas",
-        imageUrl = "https://mobile.ocado.com/webservices/catalogue/items/item/309396011/images/image/0/360x360.jpg",
-        size = "6 per pack"
-    )
-    val product = ProductEntity(
-        id = ProductId("309396011"),
         price = "1.45",
         title = "Ocado Organic Fairtrade Bananas",
         imageUrl = "https://mobile.ocado.com/webservices/catalogue/items/item/309396011/images/image/0/360x360.jpg",

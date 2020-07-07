@@ -6,7 +6,7 @@ import es.ocado.features.product.list.domain.model.ProductId
 
 internal object ListContent {
     object Data {
-        val productsBody: String =
+        val productsListBody: String =
             """
                 {
                   "clusters": [

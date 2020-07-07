@@ -13,7 +13,6 @@ import com.azimolabs.conditionwatcher.waitForCondition
 import es.ocado.features.product.detail.R
 
 import es.ocado.features.product.detail.domain.model.ProductDetailEntity
-import es.ocado.features.product.list.domain.model.ProductEntity
 import es.ocado.navigation.features.products.detail.ProductDetailParams
 import org.hamcrest.Matchers
 
@@ -27,7 +26,8 @@ internal class ProductDetailRobot {
         }
         ActivityScenario.launch<ProductDetailActivity>(intent)
     }
-    fun isOnDetailsScreen(product: ProductEntity, detail: ProductDetailEntity) {
+
+    fun isOnDetailsScreen(product: ProductDetailParams, detail: ProductDetailEntity) {
         isTextDisplayed(detail.title)
         isDescriptionShown(detail.description)
         isAllergyInformationShown(detail.allergyInformation)
@@ -88,6 +88,7 @@ internal class ProductDetailRobot {
                 .check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
         }
     }
+
     companion object {
         fun productDetailRobot(block: ProductDetailRobot.() -> Unit) {
             ProductDetailRobot().apply {

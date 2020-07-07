@@ -22,4 +22,7 @@ dependencies {
 
     implementation(Dependencies.hilt_lifecyle_viewmodel)
     kapt(Dependencies.hilt_compiler)
+
+    androidTestImplementation project(Modules.baseAndroidTest)
+    kaptAndroidTest(Dependencies.hilt_android_compiler)
 }
