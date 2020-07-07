@@ -1,6 +1,5 @@
 package es.ocado.features.product.detail.presentation
 
-import android.content.Intent
 import androidx.annotation.IdRes
 import androidx.annotation.StringRes
 import androidx.test.core.app.ActivityScenario
@@ -11,19 +10,17 @@ import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.platform.app.InstrumentationRegistry
 import com.azimolabs.conditionwatcher.waitForCondition
 import es.ocado.features.product.detail.R
-
 import es.ocado.features.product.detail.domain.model.ProductDetailEntity
+import es.ocado.navigation.features.products.detail.ProductDetailDestination
 import es.ocado.navigation.features.products.detail.ProductDetailParams
+import es.ocado.navigation.toIntent
 import org.hamcrest.Matchers
 
 internal class ProductDetailRobot {
     fun open(params: ProductDetailParams) {
-        val intent = Intent(
-            InstrumentationRegistry.getInstrumentation().targetContext,
-            ProductDetailActivity::class.java
-        ).apply {
-            putExtra("extra", params)
-        }
+
+        val intent = ProductDetailDestination(params)
+            .toIntent(InstrumentationRegistry.getInstrumentation().targetContext)
         ActivityScenario.launch<ProductDetailActivity>(intent)
     }
 

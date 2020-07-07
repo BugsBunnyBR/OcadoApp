@@ -21,8 +21,7 @@ internal class ProductDetailViewModel @ViewModelInject constructor(
     private val getProductDetail: GetProductDetail
 ) : ViewModel() {
 
-    private val params =
-        savedStateHandle.require<ProductDetailParams>()
+    private val params = savedStateHandle.require<ProductDetailParams>()
     private val initialContent = params.toContent()
 
     val viewState = MutableLiveData<ViewState>(initialContent)

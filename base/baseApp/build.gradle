@@ -8,9 +8,6 @@ dependencies {
     implementation(Dependencies.hilt_android)
     kapt(Dependencies.hilt_android_compiler)
 
-    implementation(Dependencies.hilt_lifecyle_viewmodel)
-    kapt(Dependencies.hilt_compiler)
-
     api(Dependencies.coroutines_android)
     api(Dependencies.dispatchers_android_viewmodel)
 

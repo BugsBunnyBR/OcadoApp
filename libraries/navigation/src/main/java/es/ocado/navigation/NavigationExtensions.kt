@@ -1,6 +1,7 @@
 package es.ocado.navigation
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.Parcelable
@@ -24,8 +25,8 @@ fun <T : Parcelable> Bundle.require(): T {
     return getParcelable(EXTRA)!!
 }
 
-private fun ActivityDestination.toIntent(activity: Activity): Intent {
-    return Intent(activity, Class.forName(activityClass))
+fun ActivityDestination.toIntent(context: Context): Intent {
+    return Intent(context, Class.forName(activityClass))
         .apply {
             putExtra(EXTRA, params)
         }
