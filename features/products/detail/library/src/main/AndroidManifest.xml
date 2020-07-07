@@ -1,0 +1,8 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="es.ocado.features.product.detail">
+    <application>
+        <activity
+            android:name="es.ocado.features.product.detail.presentation.ProductDetailActivity"
+            android:label="@string/title_activity_product_detail" />
+    </application>
+</manifest>

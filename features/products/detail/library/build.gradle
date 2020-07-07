@@ -1,0 +1,37 @@
+apply from: "$rootDir/build-system/android-library-module.gradle"
+
+apply plugin: 'dagger.hilt.android.plugin'
+apply plugin: 'de.mannodermaus.android-junit5'
+
+archivesBaseName = "ProductDetailLibrary"
+
+dependencies {
+
+    implementation project(Modules.baseMain)
+    implementation project(Modules.components)
+    implementation project(Modules.navigation)
+
+    implementation(Dependencies.coroutines_android)
+
+    implementation(Dependencies.android_core)
+    implementation(Dependencies.android_appcompat)
+    implementation(Dependencies.android_activity)
+    implementation(Dependencies.android_fragment)
+    implementation(Dependencies.android_recyclerview)
+    implementation(Dependencies.android_lifecycle)
+    implementation(Dependencies.android_constraint_layout)
+
+
+    implementation(Dependencies.hilt_android)
+    kapt(Dependencies.hilt_android_compiler)
+
+    implementation(Dependencies.hilt_lifecyle_viewmodel)
+    kapt(Dependencies.hilt_compiler)
+
+    implementation(Dependencies.android_material)
+    implementation(Dependencies.dispatchers_android_viewmodel)
+    implementation(Dependencies.retrofit)
+
+    testImplementation project(Modules.baseTest)
+
+}

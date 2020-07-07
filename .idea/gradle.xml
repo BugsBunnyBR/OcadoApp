@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="testRunner" value="PLATFORM" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleHome" value="/usr/local/Cellar/gradle/5.6/libexec" />
+        <option name="gradleJvm" value="1.8" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/base" />
+            <option value="$PROJECT_DIR$/base/baseAndroidTest" />
+            <option value="$PROJECT_DIR$/base/baseApp" />
+            <option value="$PROJECT_DIR$/base/baseLibrary" />
+            <option value="$PROJECT_DIR$/base/baseTest" />
+            <option value="$PROJECT_DIR$/buildSrc" />
+            <option value="$PROJECT_DIR$/features" />
+            <option value="$PROJECT_DIR$/features/products" />
+            <option value="$PROJECT_DIR$/features/products/detail" />
+            <option value="$PROJECT_DIR$/features/products/detail/app" />
+            <option value="$PROJECT_DIR$/features/products/detail/library" />
+            <option value="$PROJECT_DIR$/features/products/list" />
+            <option value="$PROJECT_DIR$/features/products/list/app" />
+            <option value="$PROJECT_DIR$/features/products/list/library" />
+            <option value="$PROJECT_DIR$/libraries" />
+            <option value="$PROJECT_DIR$/libraries/components" />
+            <option value="$PROJECT_DIR$/libraries/navigation" />
+          </set>
+        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

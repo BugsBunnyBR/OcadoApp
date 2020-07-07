@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_activity_product_detail">Product Detail</string>
+    <string name="product_detail_activity_about">About</string>
+    <string name="product_detail_allergy_information">Allergy Information</string>
+    <string name="product_detail_size">Size</string>
+    <string name="product_detail_error_message">Failed to load data, verify your internet connection</string>
+    <string name="product_detail_retry_action">Retry</string>
+</resources>

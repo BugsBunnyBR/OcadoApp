@@ -1,0 +1,8 @@
+apply from: "$rootDir/build-system/android-library-module.gradle"
+
+archivesBaseName = "Components"
+
+dependencies {
+    implementation(Dependencies.android_core)
+    implementation(Dependencies.android_appcompat)
+}

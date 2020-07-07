@@ -1,0 +1,18 @@
+apply from: "$rootDir/build-system/android-library-module.gradle"
+apply plugin: 'dagger.hilt.android.plugin'
+
+dependencies {
+
+    api(Dependencies.android_ext_junit)
+    api(Dependencies.android_test_runner)
+    api(Dependencies.android_test_rules)
+
+    api(Dependencies.espresso_core)
+
+    api(Dependencies.okhttp_mockwebserver)
+    api(Dependencies.dispatchers_android_espresso)
+
+    api(Dependencies.hilt_android)
+    kapt(Dependencies.hilt_android_compiler)
+    api(Dependencies.hilt_android_testing)
+}

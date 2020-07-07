@@ -1,0 +1,30 @@
+apply plugin: 'com.android.application'
+apply from: "$rootDir/build-system/android-module.gradle"
+apply plugin: 'dagger.hilt.android.plugin'
+
+android {
+
+    defaultConfig {
+        applicationId "es.ocado.app"
+    }
+}
+
+dependencies {
+    implementation project(Modules.baseApp)
+    implementation project(Modules.navigation)
+    implementation project(Modules.productsList)
+    implementation project(Modules.productsDetail)
+
+    implementation(Dependencies.android_appcompat)
+
+    implementation(Dependencies.hilt_android)
+    kapt(Dependencies.hilt_android_compiler)
+
+    implementation(Dependencies.hilt_lifecyle_viewmodel)
+    kapt(Dependencies.hilt_compiler)
+
+    androidTestImplementation project(Modules.baseAndroidTest)
+    kaptAndroidTest(Dependencies.hilt_android_compiler)
+
+
+}

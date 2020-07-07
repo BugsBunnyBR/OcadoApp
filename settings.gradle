@@ -1,0 +1,17 @@
+include ':base:baseAndroidTest'
+include ':base:baseApp'
+include ':base:baseLibrary'
+include ':base:baseTest'
+
+
+include ':libraries:navigation'
+include ':libraries:components'
+
+include ':features:products:list:library'
+include ':features:products:list:app'
+
+include ':features:products:detail:library'
+include ':features:products:detail:app'
+
+include ':app'
+rootProject.name = "Ocado"

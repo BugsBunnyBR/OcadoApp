@@ -1,0 +1,20 @@
+apply from: "$rootDir/build-system/android-library-module.gradle"
+apply plugin: 'dagger.hilt.android.plugin'
+
+dependencies {
+    implementation project(Modules.navigation)
+    implementation(Dependencies.android_material)
+
+    implementation(Dependencies.hilt_android)
+    kapt(Dependencies.hilt_android_compiler)
+
+    implementation(Dependencies.hilt_lifecyle_viewmodel)
+    kapt(Dependencies.hilt_compiler)
+
+    api(Dependencies.coroutines_android)
+    api(Dependencies.dispatchers_android_viewmodel)
+
+    api(Dependencies.retrofit)
+    implementation(Dependencies.retrofit_moshi)
+    api(Dependencies.okhttp_logging_interceptor)
+}
