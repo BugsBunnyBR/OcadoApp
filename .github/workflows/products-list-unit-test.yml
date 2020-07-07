@@ -2,12 +2,16 @@ name: Android Lint CI
 
 on:
   push:
+    paths:
+      - "features/products/list/**"
     branches: [ master ]
   pull_request:
     branches: [ master ]
+    paths:
+      - "features/products/list/**"
 
 jobs:
-  lint:
+  unit-test:
 
     runs-on: ubuntu-latest
 
@@ -17,5 +21,5 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
-    - name: Runs lint with ktlint and detekt
-      run: ./gradlew ktlint detekt
+    - name: Runs Products List Unit test
+      run: ./gradlew features:products:list:library:testDebugUnitTest
