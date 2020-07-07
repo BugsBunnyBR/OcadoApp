@@ -29,5 +29,5 @@ fun waitForCondition(
         }
     } while (status != CONDITION_MET)
     if (status == TIMEOUT)
-        throw Exception("Instruction - took more than " + timeoutLimit / 1000 + " seconds. Test stopped.")
+        throw Exception("Instruction - took more than $timeoutLimit milliseconds. Test stopped.")
 }

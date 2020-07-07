@@ -1,3 +1,4 @@
+/* ktlint-disable max-line-length */
 package es.ocado.app
 
 import dagger.hilt.android.HiltAndroidApp
