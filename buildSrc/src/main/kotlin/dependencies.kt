@@ -5,6 +5,7 @@ object Versions {
 object Dependencies {
 
     const val coroutines_android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.7"
+    const val coroutines_test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.3.7"
 
     const val android_core = "androidx.core:core-ktx:1.3.0"
     const val android_appcompat = "androidx.appcompat:appcompat:1.1.0"
@@ -12,11 +13,16 @@ object Dependencies {
     const val android_fragment = "androidx.fragment:fragment-ktx:1.2.5"
     const val android_recyclerview = "androidx.recyclerview:recyclerview:1.2.0-alpha04"
     const val android_lifecycle = "android.arch.lifecycle:extensions:1.1.1"
-    const val android_lifecycle_saved_state = "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0"
+    const val android_lifecycle_saved_state =
+        "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0"
     const val android_constraint_layout = "androidx.constraintlayout:constraintlayout:1.1.3"
+
+    const val android_arch_core_testing = "androidx.arch.core:core-testing:2.1.0"
+    const val livedata_testing = "com.jraska.livedata:testing-ktx:1.1.2"
 
     const val retrofit = "com.squareup.retrofit2:retrofit:2.9.0"
     const val retrofit_moshi = "com.squareup.retrofit2:converter-moshi:2.9.0"
+    const val retrofit_mock = "com.squareup.retrofit2:retrofit-mock:2.9.0"
 
     const val okhttp_logging_interceptor = "com.squareup.okhttp3:logging-interceptor:4.7.2"
 
@@ -32,8 +38,11 @@ object Dependencies {
         "com.rickbusarow.dispatch:dispatch-android-viewmodel:1.0.0-beta04"
     const val dispatchers_android_espresso =
         "com.rickbusarow.dispatch:dispatch-android-espresso:1.0.0-beta04"
-
+    const val dispatcher_test_unit5 = "com.rickbusarow.dispatch:dispatch-test-junit5:1.0.0-beta04"
+    const val mockk = "io.mockk:mockk:1.10.0"
     const val coil = "io.coil-kt:coil:0.11.0"
+    const val junit_jupiter = "org.junit.jupiter:junit-jupiter-api:5.6.2"
+    const val junit_jupiter_runtime = "org.junit.jupiter:junit-jupiter-engine:5.6.2"
 
     const val android_ext_junit = "androidx.test.ext:junit:1.1.1"
     const val espresso_core = "androidx.test.espresso:espresso-core:3.2.0"

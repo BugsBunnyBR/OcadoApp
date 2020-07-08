@@ -2,8 +2,8 @@ package es.ocado.features.product.detail.presentation
 
 import androidx.lifecycle.SavedStateHandle
 import com.jraska.livedata.test
+import dispatch.test.CoroutineTestExtension
 
-import es.ocado.basetest.CoroutinesTestExtension
 import es.ocado.basetest.InstantExecutorExtension
 import es.ocado.features.product.detail.domain.GetProductDetail
 import es.ocado.features.product.detail.domain.model.ProductDetailEntity
@@ -20,7 +20,7 @@ import java.io.IOException
 
 @ExtendWith(
     value = [
-        CoroutinesTestExtension::class,
+        CoroutineTestExtension::class,
         InstantExecutorExtension::class
     ]
 )

@@ -3,12 +3,12 @@ package es.ocado.features.product.list.presentation
 import com.jraska.livedata.test
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.whenever
-import es.ocado.basetest.CoroutinesTestExtension
+import dispatch.test.CoroutineTestExtension
 import es.ocado.basetest.InstantExecutorExtension
-import es.ocado.features.product.list.domain.model.ProductId
 import es.ocado.features.product.list.domain.GetProducts
 import es.ocado.features.product.list.domain.model.ProductClusterEntity
 import es.ocado.features.product.list.domain.model.ProductEntity
+import es.ocado.features.product.list.domain.model.ProductId
 import es.ocado.navigation.features.products.detail.ProductDetailParams
 import kotlinx.coroutines.test.runBlockingTest
 import org.junit.jupiter.api.Test
@@ -17,7 +17,7 @@ import java.io.IOException
 
 @ExtendWith(
     value = [
-        CoroutinesTestExtension::class,
+        CoroutineTestExtension::class,
         InstantExecutorExtension::class
     ]
 )
