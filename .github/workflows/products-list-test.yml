@@ -4,11 +4,17 @@ on:
   push:
     paths:
       - "features/products/list/**"
+      - "base/**"
+      - "libraries/**"
+      - "app/**"
     branches: [ master ]
   pull_request:
     branches: [ master ]
     paths:
       - "features/products/list/**"
+      - "base/**"
+      - "libraries/**"
+      - "app/**"
 
 jobs:
   tests:
