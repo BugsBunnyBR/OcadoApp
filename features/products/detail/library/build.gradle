@@ -1,8 +1,6 @@
 apply from: "$rootDir/build-system/android-library-module.gradle"
-
 apply plugin: 'dagger.hilt.android.plugin'
 apply plugin: 'de.mannodermaus.android-junit5'
-
 archivesBaseName = "ProductDetailLibrary"
 
 dependencies {
