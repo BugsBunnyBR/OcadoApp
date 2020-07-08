@@ -11,7 +11,7 @@ on:
       - "features/products/detail/**"
 
 jobs:
-  unit-test:
+  tests:
     runs-on: macOS-latest
     steps:
       - uses: actions/checkout@v2
