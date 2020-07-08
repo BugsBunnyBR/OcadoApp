@@ -1,6 +1,7 @@
 package es.ocado.basetest
 
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.TestCoroutineDispatcher
 import kotlinx.coroutines.test.TestCoroutineScope
 import kotlinx.coroutines.test.resetMain
@@ -15,6 +16,7 @@ import org.junit.jupiter.api.extension.ExtensionContext
  * @RegisterExtension
  * val coroutinesTestExtension = CoroutinesTestExtension()
  */
+@ExperimentalCoroutinesApi
 class CoroutinesTestExtension(
     val dispatcher: TestCoroutineDispatcher = TestCoroutineDispatcher()
 ) : BeforeEachCallback, AfterEachCallback, TestCoroutineScope by TestCoroutineScope(dispatcher) {

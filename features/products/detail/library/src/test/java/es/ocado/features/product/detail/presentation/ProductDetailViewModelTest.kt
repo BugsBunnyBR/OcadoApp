@@ -2,8 +2,7 @@ package es.ocado.features.product.detail.presentation
 
 import androidx.lifecycle.SavedStateHandle
 import com.jraska.livedata.test
-import com.nhaarman.mockitokotlin2.mock
-import com.nhaarman.mockitokotlin2.whenever
+
 import es.ocado.basetest.CoroutinesTestExtension
 import es.ocado.basetest.InstantExecutorExtension
 import es.ocado.features.product.detail.domain.GetProductDetail
@@ -11,6 +10,9 @@ import es.ocado.features.product.detail.domain.model.ProductDetailEntity
 import es.ocado.features.product.detail.domain.model.ProductDetailId
 import es.ocado.navigation.features.products.detail.ProductDetailParams
 import es.ocado.navigation.require
+import io.mockk.coEvery
+import io.mockk.every
+import io.mockk.mockk
 import kotlinx.coroutines.test.runBlockingTest
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
@@ -23,8 +25,8 @@ import java.io.IOException
     ]
 )
 internal class ProductDetailViewModelTest {
-    val savedStateHandle: SavedStateHandle = mock()
-    val getProductDetail: GetProductDetail = mock()
+    val savedStateHandle: SavedStateHandle = mockk()
+    val getProductDetail: GetProductDetail = mockk()
     val navParams = ProductDetailParams(
         id = "id",
         title = "title",
@@ -42,8 +44,7 @@ internal class ProductDetailViewModelTest {
     @Test
     fun `should publish initial value from parameters`() {
         // Given
-        whenever(savedStateHandle.require<ProductDetailParams>())
-            .thenReturn(navParams)
+        every { savedStateHandle.require<ProductDetailParams>() } returns navParams
 
         // when
         val viewModel = ProductDetailViewModel(savedStateHandle, getProductDetail)
@@ -75,16 +76,15 @@ internal class ProductDetailViewModelTest {
             allergyInformation = "allergyInformation",
             description = "description"
         )
-        whenever(savedStateHandle.require<ProductDetailParams>())
-            .thenReturn(navParams)
+        every { savedStateHandle.require<ProductDetailParams>() } returns navParams
 
-        whenever(
+        coEvery {
             getProductDetail(
                 ProductDetailId(
                     "id"
                 )
             )
-        ).thenReturn(productDetail)
+        } returns productDetail
 
         val viewModel = ProductDetailViewModel(savedStateHandle, getProductDetail)
         val testObserver = viewModel.viewState.test()
@@ -101,8 +101,8 @@ internal class ProductDetailViewModelTest {
     @Test
     fun `should fail to load product detail`() = runBlockingTest {
         // Given
-        whenever(savedStateHandle.require<ProductDetailParams>())
-            .thenReturn(navParams)
+        every { savedStateHandle.require<ProductDetailParams>() } returns navParams
+
         val getProductDetail = object : GetProductDetail {
             override suspend fun invoke(id: ProductDetailId): ProductDetailEntity {
                 throw IOException()
