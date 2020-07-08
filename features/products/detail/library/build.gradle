@@ -19,7 +19,6 @@ dependencies {
     implementation(Dependencies.android_lifecycle)
     implementation(Dependencies.android_constraint_layout)
 
-
     implementation(Dependencies.hilt_android)
     kapt(Dependencies.hilt_android_compiler)
 
