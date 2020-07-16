@@ -18,6 +18,8 @@ import es.ocado.navigation.features.products.detail.ProductDetailDestination
 import es.ocado.navigation.features.products.detail.ProductDetailParams
 import es.ocado.navigation.startDestination
 import es.ocado.base.library.utils.exhaustive
+import es.ocado.features.product.list.presentation.ViewAction.LoadContent
+import es.ocado.features.product.list.presentation.ViewAction.SelectProduct
 
 @AndroidEntryPoint
 class ProductListActivity : AppCompatActivity() {
@@ -30,12 +32,10 @@ class ProductListActivity : AppCompatActivity() {
         binding = ActivityProductListBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.errorContainer.actionTryAgain.setOnClickListener {
-            viewModel.onAction(ViewAction.LoadContent)
+            viewModel.onAction(LoadContent)
         }
         observeViewModel()
-        if (savedInstanceState == null) {
-            viewModel.onAction(ViewAction.LoadContent)
-        }
+        viewModel.onAction(LoadContent)
     }
 
     private fun openProductDetail(params: ProductDetailParams) {
@@ -76,7 +76,7 @@ class ProductListActivity : AppCompatActivity() {
             listOf(
                 ProductHeaderAdapter(cluster.tag),
                 ProductAdapter(cluster.items) { product ->
-                    viewModel.onAction(ViewAction.SelectProduct(product))
+                    viewModel.onAction(SelectProduct(product))
                 }
             )
         }.flatten()

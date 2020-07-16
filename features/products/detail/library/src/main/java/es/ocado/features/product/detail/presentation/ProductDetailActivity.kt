@@ -25,9 +25,7 @@ class ProductDetailActivity : AppCompatActivity() {
         setContentView(binding.root)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         observeViewModel()
-        if (savedInstanceState == null) {
-            viewModel.onAction(LoadDetails)
-        }
+        viewModel.onAction(LoadDetails)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
