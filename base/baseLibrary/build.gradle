@@ -1,4 +1,10 @@
 apply from: "$rootDir/build-system/android-library-module.gradle"
+android {
+    defaultConfig {
+        buildConfigField 'int', 'VERSION_CODE', "1"
+        buildConfigField 'String', 'VERSION_NAME', "\"1.0\""
+    }
+}
 dependencies {
     implementation(Dependencies.coil)
     implementation(Dependencies.android_core)

@@ -1,5 +1,5 @@
 object Versions {
-
+    const val hilt_version = "2.29.1-alpha"
 }
 
 object Dependencies {
@@ -26,9 +26,11 @@ object Dependencies {
 
     const val okhttp_logging_interceptor = "com.squareup.okhttp3:logging-interceptor:4.7.2"
 
-    const val hilt_android = "com.google.dagger:hilt-android:2.28.1-alpha"
-    const val hilt_android_compiler = "com.google.dagger:hilt-android-compiler:2.28.1-alpha"
-    const val hilt_android_testing = "com.google.dagger:hilt-android-testing:2.28-alpha"
+    const val hilt_android = "com.google.dagger:hilt-android:${Versions.hilt_version}"
+    const val hilt_android_compiler =
+        "com.google.dagger:hilt-android-compiler:${Versions.hilt_version}"
+    const val hilt_android_testing =
+        "com.google.dagger:hilt-android-testing:${Versions.hilt_version}"
 
     const val hilt_lifecyle_viewmodel = "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha01"
     const val hilt_compiler = "androidx.hilt:hilt-compiler:1.0.0-alpha01"
